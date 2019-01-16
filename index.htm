@@ -14,17 +14,46 @@
 
 <body>
 <div class="theoplayer-container video-js theoplayer-skin theo-seekbar-above-controls"></div>
-
-<script type='text/javascript' src='https://cdn.myth.theoplayer.com/840f8cb7-17af-46b3-93ff-71645dec836f/THEOplayer.js'></script>
 <script>
- 
-fetch('https://grandcentral.ovva.tv/lb/live/189931/d2dfa0e1579fc78b37192d812e8e896d')
-    .then(res => res.json())
-    .then((out) => {
-        console.log('Output: ', out);
+
+var getJSON = function(url, callback) {
+
+    var xhr = new XMLHttpRequest();
+    xhr.open('GET', url, true);
+    xhr.responseType = 'json';
+    
+    xhr.onload = function() {
+    
+        var status = xhr.status;
+        
+        if (status == 200) {
+            callback(null, xhr.response);
+        } else {
+            callback(status);
+        }
+    };
+    
+    xhr.send();
+};
+
+getJSON('https://grandcentral.ovva.tv/lb/live/189931/d2dfa0e1579fc78b37192d812e8e896d',  function(err, data) {
+    
+    if (err != null) {
+        console.error(err);
+    } else {
+        
+       // var text = `Date: ${data.date}
+//Time: ${data.time}
+//Unix time: ${data.milliseconds_since_epoch}`
+    
+        console.log(data);
+    }
 });
 
-
+</script>
+  
+<script type='text/javascript' src='https://cdn.myth.theoplayer.com/840f8cb7-17af-46b3-93ff-71645dec836f/THEOplayer.js'></script>
+<script> 
 var element = document.querySelector('.theoplayer-container');
 var player = new THEOplayer.Player(element, {
 libraryLocation: 'https://cdn.myth.theoplayer.com/840f8cb7-17af-46b3-93ff-71645dec836f/'

@@ -15,40 +15,16 @@
 <body>
 <div class="theoplayer-container video-js theoplayer-skin theo-seekbar-above-controls"></div>
 <script>
+var storedText;
 
-var getJSON = function(url, callback) {
+fetch('https://grandcentral.ovva.tv/lb/live/189931/d2dfa0e1579fc78b37192d812e8e896d')
+  .then(function(response) {
+    response.text().then(function(text) {
+      storedText = text.replace( "302=", "" );
+      alert(storedText);
+    });
+  });
 
-    var xhr = new XMLHttpRequest();
-    xhr.open('GET', url, true);
-    xhr.responseType = 'json';
-    
-    xhr.onload = function() {
-    
-        var status = xhr.status;
-        
-        if (status == 200) {
-            callback(null, xhr.response);
-        } else {
-            callback(status);
-        }
-    };
-    
-    xhr.send();
-};
-
-getJSON('https://grandcentral.ovva.tv/lb/live/189931/d2dfa0e1579fc78b37192d812e8e896d',  function(err, data) {
-    
-    if (err != null) {
-        console.error(err);
-    } else {
-        
-       // var text = `Date: ${data.date}
-//Time: ${data.time}
-//Unix time: ${data.milliseconds_since_epoch}`
-    
-        console.log(data);
-    }
-});
 
 </script>
   

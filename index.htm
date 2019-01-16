@@ -24,7 +24,7 @@ var storedText;
 fetch('https://grandcentral.1plus1.ua/lb/live/189931/7a30b9e9d353152138c1fa4f1f52fb5d')
   .then(function(response) {
     response.text().then(function(text) {
-      storedText = text.replace( "302=https:", "" );
+      storedText = text.replace( "302", "" );
      //alert(storedText);
     });
   });
@@ -37,7 +37,7 @@ libraryLocation: 'https://cdn.myth.theoplayer.com/840f8cb7-17af-46b3-93ff-71645d
 
 player.source = {
 sources: [{
-src: '//cdn.theoplayer.com/video/star_wars_episode_vii-the_force_awakens_official_comic-con_2015_reel_(2015)/index.m3u8',
+src: storedText,
 type: 'application/x-mpegurl'
 }]
 };

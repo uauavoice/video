@@ -11,9 +11,17 @@
   
 </style>
       <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-	<script> 
-		
-var storedText;
+</head>
+
+<body>
+<div class="theoplayer-container video-js theoplayer-skin theo-seekbar-above-controls"></div>
+
+  
+<script type='text/javascript' src='https://cdn.myth.theoplayer.com/840f8cb7-17af-46b3-93ff-71645dec836f/THEOplayer.js'></script>
+<script> 
+	
+// var ttext=storedText; 
+	var storedText;
 
   
 fetch('https://grandcentral.ovva.tv/lb/live/233200/8dd14fe649c20dab949e9fcaa51b9704')
@@ -25,23 +33,10 @@ fetch('https://grandcentral.ovva.tv/lb/live/233200/8dd14fe649c20dab949e9fcaa51b9
     // console.log(storedText);
     });
   });
-  
 	
-	</script>
-</head>
-
-<body>
-<div class="theoplayer-container video-js theoplayer-skin theo-seekbar-above-controls"></div>
-
-  
-<script type='text/javascript' src='https://cdn.myth.theoplayer.com/840f8cb7-17af-46b3-93ff-71645dec836f/THEOplayer.js'></script>
-<script> 
-	console.log(storedText);
-
-// var ttext=storedText; 
-  
-
-	var ttext=storedText;
+  function f(x) {
+	  
+	var ttext=x;
 	var element = document.querySelector('.theoplayer-container');
 var player = new THEOplayer.Player(element, {
 libraryLocation: 'https://cdn.myth.theoplayer.com/840f8cb7-17af-46b3-93ff-71645dec836f/'
@@ -49,13 +44,15 @@ libraryLocation: 'https://cdn.myth.theoplayer.com/840f8cb7-17af-46b3-93ff-71645d
 
 player.source = {
 sources: [{
-src: storedText ,
+src: ttext ,
 type: 'application/x-mpegurl'
 }]
 };
  console.log(ttext);
 
-
+ }
+	var f1500 = delay(f, 1500);
+	f1500(storedText);
 </script>
 
 </body>

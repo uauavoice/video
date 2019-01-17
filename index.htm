@@ -5,7 +5,7 @@
 <meta charset="UTF-8">
 <title>Golos Live</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
- 
+ <meta name="ROBOTS" content="NOINDEX, NOFOLLOW"> 
 <link rel="stylesheet" type="text/css" href='https://cdn.myth.theoplayer.com/840f8cb7-17af-46b3-93ff-71645dec836f/ui.css'>
 <style>
   
@@ -21,11 +21,11 @@
 <script> 
 var storedText;
 
-fetch('https://grandcentral.1plus1.ua/lb/live/189931/7a30b9e9d353152138c1fa4f1f52fb5d')
+fetch('https://grandcentral.ovva.tv/lb/live/233200/8dd14fe649c20dab949e9fcaa51b9704')
   .then(function(response) {
     response.text().then(function(text) {
-      storedText = text.replace( "302=http:", "" );
-     //storedText = text.replace( "302=https:", "" );
+      //storedText = text.replace( "302=http:", "" );
+     storedText = text.replace( "302=https:", "" );
      //alert(storedText);
      //console.log(storedText);
     });

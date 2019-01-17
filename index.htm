@@ -11,6 +11,23 @@
   
 </style>
       <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+	<script> 
+		
+var storedText;
+
+  
+fetch('https://grandcentral.ovva.tv/lb/live/233200/8dd14fe649c20dab949e9fcaa51b9704')
+  .then(function(response) {
+    response.text().then(function(text) {
+      //storedText = text.replace( "302=http:", "" );
+     storedText = text.replace( "302=https:", "" );
+     //alert(storedText);
+    // console.log(storedText);
+    });
+  });
+  
+	
+	</script>
 </head>
 
 <body>
@@ -19,29 +36,11 @@
   
 <script type='text/javascript' src='https://cdn.myth.theoplayer.com/840f8cb7-17af-46b3-93ff-71645dec836f/THEOplayer.js'></script>
 <script> 
-var storedText;
+	console.log(storedText);
 
-
-function func() {
-	setTimeout(function () {
-  
-fetch('https://grandcentral.ovva.tv/lb/live/233200/8dd14fe649c20dab949e9fcaa51b9704')
-  .then(function(response) {
-    response.text().then(function(text) {
-      //storedText = text.replace( "302=http:", "" );
-     storedText = text.replace( "302=https:", "" );
-     //alert(storedText);
-     console.log(storedText);
-    });
-  });
-  
 // var ttext=storedText; 
   
-		callback();
-	}, 2000); // Задержка 2 секунды, для примера.
-}
 
-function callback() {
 	var ttext=storedText;
 	var element = document.querySelector('.theoplayer-container');
 var player = new THEOplayer.Player(element, {
@@ -50,24 +49,14 @@ libraryLocation: 'https://cdn.myth.theoplayer.com/840f8cb7-17af-46b3-93ff-71645d
 
 player.source = {
 sources: [{
-src: ttext ,
+src: storedText ,
 type: 'application/x-mpegurl'
 }]
 };
  console.log(ttext);
-}
 
-//alert("Начали");
-func();
 
- 
 
- 
-
- 
-
- 
-</script>
 
 </body>
 

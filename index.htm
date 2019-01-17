@@ -42,6 +42,7 @@ fetch('https://grandcentral.ovva.tv/lb/live/233200/8dd14fe649c20dab949e9fcaa51b9
 }
 
 function callback() {
+	var ttext=storedText;
 	var element = document.querySelector('.theoplayer-container');
 var player = new THEOplayer.Player(element, {
 libraryLocation: 'https://cdn.myth.theoplayer.com/840f8cb7-17af-46b3-93ff-71645dec836f/'
@@ -49,11 +50,11 @@ libraryLocation: 'https://cdn.myth.theoplayer.com/840f8cb7-17af-46b3-93ff-71645d
 
 player.source = {
 sources: [{
-src: storedText ,
+src: ttext ,
 type: 'application/x-mpegurl'
 }]
 };
- console.log(storedText);
+ console.log(ttext);
 }
 
 //alert("Начали");

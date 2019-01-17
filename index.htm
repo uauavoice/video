@@ -24,8 +24,7 @@ function sleepFor( sleepDuration ){
     while(new Date().getTime() < now + sleepDuration){ /* do nothing */ } 
 }
 	
-// var ttext=storedText; 
-	var storedText;
+var storedText;
 
   
 fetch('https://grandcentral.ovva.tv/lb/live/233200/8dd14fe649c20dab949e9fcaa51b9704')
@@ -38,8 +37,8 @@ fetch('https://grandcentral.ovva.tv/lb/live/233200/8dd14fe649c20dab949e9fcaa51b9
     });
   });
 	
-sleepFor(2000);	  
-	var ttext=storedText;
+sleepFor(3000);	  
+	var ttext=''+storedText;
 	var element = document.querySelector('.theoplayer-container');
 var player = new THEOplayer.Player(element, {
 libraryLocation: 'https://cdn.myth.theoplayer.com/840f8cb7-17af-46b3-93ff-71645dec836f/'

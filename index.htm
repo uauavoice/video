@@ -27,11 +27,14 @@ fetch('https://grandcentral.ovva.tv/lb/live/233200/8dd14fe649c20dab949e9fcaa51b9
       //storedText = text.replace( "302=http:", "" );
      storedText = text.replace( "302=https:", "" );
      //alert(storedText);
-     //console.log(storedText);
+     console.log(storedText);
     });
   });
   
- var ttext=storedText; 
+// var ttext=storedText; 
+ 
+function ready() {
+ 
 var element = document.querySelector('.theoplayer-container');
 var player = new THEOplayer.Player(element, {
 libraryLocation: 'https://cdn.myth.theoplayer.com/840f8cb7-17af-46b3-93ff-71645dec836f/'
@@ -43,8 +46,8 @@ src: storedText ,
 type: 'application/x-mpegurl'
 }]
 };
-
-
+  }
+ document.addEventListener("DOMContentLoaded", ready);
 </script>
 
 </body>

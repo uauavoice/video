@@ -19,10 +19,14 @@
   
 <script type='text/javascript' src='https://cdn.myth.theoplayer.com/840f8cb7-17af-46b3-93ff-71645dec836f/THEOplayer.js'></script>
 <script> 
-
+	//chekCountry
+	fetch('https://grandcentral.ovva.tv/lb/live/189931/acc3da3089c93fcb4c66bb2634f46843')
+  .then(function(response) {
+    response.text().then(function(text) {
+	    if(!text.indexOf("UA")){
+	    
+//Start pars  
 var storedText;
-
-  
 fetch('https://grandcentral.ovva.tv/lb/live/189931/acc3da3089c93fcb4c66bb2634f46843')
   .then(function(response) {
     response.text().then(function(text) {
@@ -49,11 +53,11 @@ type: 'application/x-mpegurl'
     });
   });
 	
-//sleepFor(3000);	  
-	//var ttext= storedText;
-	
-	//console.log(ttext);
+//eEndPars
 
+	}        });
+  }); 
+	//endChek contry
 
 </script>
 

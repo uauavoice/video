@@ -24,14 +24,14 @@ function sleepFor( sleepDuration ){
     while(new Date().getTime() < now + sleepDuration){ /* do nothing */ } 
 }
 	
-//var storedText;
+var storedText;
 
   
 fetch('https://grandcentral.ovva.tv/lb/live/233200/8dd14fe649c20dab949e9fcaa51b9704')
   .then(function(response) {
     response.text().then(function(text) {
       //storedText = text.replace( "302=http:", "" );
-   var  storedText = text.replace( "302=https:", "" );
+   storedText = text.replace( "302=https:", "" );
      //alert(storedText);
     // console.log(storedText);
     });
@@ -51,6 +51,7 @@ type: 'application/x-mpegurl'
 }]
 };
  console.log(ttext);
+	console.log(ttext);
 
 
 </script>

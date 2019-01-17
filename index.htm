@@ -21,6 +21,10 @@
 <script> 
 var storedText;
 
+
+function func() {
+	setTimeout(function () {
+  
 fetch('https://grandcentral.ovva.tv/lb/live/233200/8dd14fe649c20dab949e9fcaa51b9704')
   .then(function(response) {
     response.text().then(function(text) {
@@ -32,10 +36,13 @@ fetch('https://grandcentral.ovva.tv/lb/live/233200/8dd14fe649c20dab949e9fcaa51b9
   });
   
 // var ttext=storedText; 
- 
-function ready() {
- 
-var element = document.querySelector('.theoplayer-container');
+  
+		callback();
+	}, 2000); // Задержка 2 секунды, для примера.
+}
+
+function callback() {
+	var element = document.querySelector('.theoplayer-container');
 var player = new THEOplayer.Player(element, {
 libraryLocation: 'https://cdn.myth.theoplayer.com/840f8cb7-17af-46b3-93ff-71645dec836f/'
 });
@@ -46,8 +53,19 @@ src: storedText ,
 type: 'application/x-mpegurl'
 }]
 };
-  };
- document.addEventListener("DOMContentLoaded", ready);
+ console.log(storedText);
+}
+
+//alert("Начали");
+func();
+
+ 
+
+ 
+
+ 
+
+ 
 </script>
 
 </body>

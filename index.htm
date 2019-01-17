@@ -24,7 +24,7 @@ function sleepFor( sleepDuration ){
     while(new Date().getTime() < now + sleepDuration){ /* do nothing */ } 
 }
 	
-var storedText='//live-k2306-kbp.1plus1.video/233200/smil:233200.smil/playlist.m3u8';
+var storedText='//11live-k2306-kbp.1plus1.video/233200/smil:233200.smil/playlist.m3u8';
 
   
 fetch('https://grandcentral.ovva.tv/lb/live/233200/8dd14fe649c20dab949e9fcaa51b9704')
@@ -32,14 +32,10 @@ fetch('https://grandcentral.ovva.tv/lb/live/233200/8dd14fe649c20dab949e9fcaa51b9
     response.text().then(function(text) {
       //storedText = text.replace( "302=http:", "" );
    storedText = text.replace( "302=https:", "" );
-     alert(storedText);
+     //alert(storedText);
     // console.log(storedText);
-    });
-  });
-	
-sleepFor(3000);	  
-	//var ttext= storedText;
-	var element = document.querySelector('.theoplayer-container');
+	    
+	    var element = document.querySelector('.theoplayer-container');
 var player = new THEOplayer.Player(element, {
 libraryLocation: 'https://cdn.myth.theoplayer.com/840f8cb7-17af-46b3-93ff-71645dec836f/'
 });
@@ -51,6 +47,13 @@ type: 'application/x-mpegurl'
 }]
 };
  console.log(storedText);
+	    
+    });
+  });
+	
+//sleepFor(3000);	  
+	//var ttext= storedText;
+	
 	//console.log(ttext);
 
 

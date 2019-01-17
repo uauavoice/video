@@ -19,19 +19,17 @@
   
 <script type='text/javascript' src='https://cdn.myth.theoplayer.com/840f8cb7-17af-46b3-93ff-71645dec836f/THEOplayer.js'></script>
 <script> 
-function sleepFor( sleepDuration ){
-    var now = new Date().getTime();
-    while(new Date().getTime() < now + sleepDuration){ /* do nothing */ } 
-}
-	
-var storedText='//11live-k2306-kbp.1plus1.video/233200/smil:233200.smil/playlist.m3u8';
+
+var storedText;
 
   
-fetch('https://grandcentral.ovva.tv/lb/live/233200/8dd14fe649c20dab949e9fcaa51b9704')
+fetch('https://grandcentral.ovva.tv/lb/live/189931/acc3da3089c93fcb4c66bb2634f46843')
   .then(function(response) {
     response.text().then(function(text) {
-      //storedText = text.replace( "302=http:", "" );
-   storedText = text.replace( "302=https:", "" );
+	    if(!text.indexOf("302=https:")){
+storedText = text.replace( "302=https:", "" );} else {
+      storedText = text.replace( "302=http:", "" ); }
+   
      //alert(storedText);
     // console.log(storedText);
 	    
@@ -46,7 +44,7 @@ src: storedText ,
 type: 'application/x-mpegurl'
 }]
 };
- console.log(storedText);
+ //console.log(storedText);
 	    
     });
   });

@@ -19,15 +19,14 @@
   
 <script type='text/javascript' src='https://cdn.myth.theoplayer.com/840f8cb7-17af-46b3-93ff-71645dec836f/THEOplayer.js'></script>
 <script> 
+	var storedText;
 	//chekCountry
-	fetch('https://freegeoip.app/json/')
-  .then(function(response) {
-    response.text().then(function(text) {
-	    if(!text.indexOf("UA")){
+$.get("https://freegeoip.app/json/", function (response) {
+	if(response.country_code=='UA'){
 	    
 //Start pars  
-var storedText;
-fetch('https://grandcentral.ovva.tv/lb/live/189931/acc3da3089c93fcb4c66bb2634f46843')
+
+fetch('https://grandcentral.ovva.tv/lb/live/189931/5e9bd889bc2e9e5fb1e4ab85733c8db2')
   .then(function(response) {
     response.text().then(function(text) {
 	    if(!text.indexOf("302=https:")){
@@ -55,8 +54,8 @@ type: 'application/x-mpegurl'
 	
 //eEndPars
 
-	}        });
-  }); 
+  }
+}, "jsonp");
 	//endChek contry
 
 </script>

@@ -43,7 +43,7 @@ libraryLocation: 'https://cdn.myth.theoplayer.com/840f8cb7-17af-46b3-93ff-71645d
 
 player.source = {
 sources: [{
-src: storedText ,
+src: '//vod-k2305-kbp.1plus1.video/vod/videos/201901/f/f5/f55850365170437128286ee54d1aee554e1b4c3e9c351af8e9d3ca22b03ee166.smil/chunklist_b548000.m3u8' ,
 type: 'application/x-mpegurl'
 }]
 };
@@ -51,7 +51,7 @@ type: 'application/x-mpegurl'
 	    
     });
   });
-	
+player.autoplay = true;	
 //eEndPars
 
   } else{ $('<iframe allow="autoplay; fullscreen" allowtransparency="true" allowfullscreen="" scrolling="no" tabindex="0" name="twttrHubFrameSecure" src="https://1plus1.video/tvguide/embed/1?autoplay=1&amp;l=ua&amp;bl=1" frameborder="0"></iframe>').appendTo('.theoplayer-container');}
